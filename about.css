@@ -1,0 +1,579 @@
+/* SmartPhone */
+@media (max-width: 480px) {
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: fantasy;
+  }
+
+  body{
+    background-attachment: fixed;
+    background-image: url(img/sea2020-min.jpg);
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: lighten;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  } 
+
+  header{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    position: fixed;
+    z-index: 20;
+  }
+  .pc-menu{
+    display: none;
+  }
+  .sp-menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sp-menu h1{
+    color: black;
+    font-size: 20px;
+    margin-left: 20px;
+    line-height: 60px;
+  }
+  .sp-menu #open {
+    font-size: 30px;
+    margin: 10px;
+    cursor: pointer;
+    color: black;
+  }
+  .spmenu #open.hide {
+    display: none;
+  }
+  .overlay {
+    width: 50%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    text-align: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 21;
+  }
+  .overlay.show {
+    opacity: .8;
+    pointer-events: auto;
+  }
+  .overlay #close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+  }
+  .overlay ul {
+    list-style: none;
+    margin: 20px;
+    margin-right: 50px;
+  }
+  .overlay li {
+    margin: 10px;
+    opacity: 0;
+    transform: translate(16px);
+    transition:  opacity .3s transform .3s;
+  }
+  .overlay li a{
+    color: black;
+  }
+  .overlay.show li {
+    opacity: 1;
+    transform: none;
+  }
+
+  .wtanaka img{
+    display: none;
+  }
+  .wtanaka{
+    padding-top: 200px;
+    height: 200px;
+  }
+  .since{
+    display: none;
+  }
+  .since2{
+    display: none;
+  }
+  .sp-intro{
+    text-align: center;
+    font-size: 48px;
+    animation: popup 3s ease;
+  }
+  @keyframes popup{
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+  }
+
+  .natsuki{
+    width: 90%;
+    height: 500px;
+    margin: auto;
+    margin-top: 200px;
+    padding-top: 60px;
+    background-image: url(img/natsuki7.jpg);
+    background-color: rgba(255, 255, 255, 0.2);
+    background-blend-mode: lighten;
+    background-size: cover;
+    animation: popup2 2s ease-in-out;
+  }
+  @keyframes popup2{
+    0% {
+      transform: translateX(80px);
+      opacity: 0;
+    }
+    25% {
+      opacity: .25;
+    }
+    50% {
+      opacity: .5;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .natsuki img{
+    margin: auto;
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid white;
+    border-radius: 50%;
+  }
+  .natsuki p{
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-size: 24px;
+    font-weight: bolder;
+    margin: 30px auto;
+  }
+  .shunpei{
+    width: 90%;
+    height: 500px;
+    margin: auto;
+    margin-top: 80px;
+    padding-top: 60px;
+    background-image: url(img/shunpei13.jpg);
+    background-color: rgba(255, 255, 255, 0.2);
+    background-blend-mode: lighten;
+    background-size: cover;
+    animation: popup3 2s ease-in-out;
+  }
+  @keyframes popup3{
+    0% {
+      transform: translateX(-80px);
+      opacity: 0;
+    }
+    25% {
+      opacity: .25;
+    }
+    50% {
+      opacity: .5;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .shunpei img{
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid white;
+    border-radius: 50%;
+  }
+  .shunpei p{
+    width: 80%;
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    font-weight: bolder;
+    margin: 30px auto;
+  }
+
+  .picture{
+    width: 400px;
+    margin: 50px auto;
+    overflow: hidden;
+  }
+  .picture h1{
+    text-align: center;
+    font-size: 50px;
+    margin: 20px auto;
+    color: black;
+  }
+  .slide-image{
+    display: flex;
+    width: 400px;
+    height: 300px;
+  }
+  .slide-images{
+    display: flex;
+    width: 400px;
+    height: 300px;
+  }
+  .slide-image img{
+    width: 400px;
+    object-fit: contain;
+  }
+  .slide-images img{
+    width: 400px;
+    object-fit: contain;
+  }
+  #prevBtn{
+    font-size: 50px;
+    cursor: pointer;
+    text-align: left;
+    user-select: none;
+  }
+  #prevBtns{
+    font-size: 50px;
+    cursor: pointer;
+    text-align: left;
+    user-select: none;
+  }
+  #nextBtn{
+    font-size: 50px;
+    cursor: pointer;
+    float: right;
+    user-select: none;
+  }
+  #nextBtns{
+    font-size: 50px;
+    cursor: pointer;
+    float: right;
+    user-select: none;
+  }
+
+  footer{
+    height: 40px;
+    width: 100%;
+    border-top: 1px solid white; 
+    background-color: white;
+    color: white;
+    margin-bottom: 0;
+  }
+  footer p{
+    line-height: 40px;
+    margin-left: 10px;
+    color: black;
+  }
+}
+/* PC */
+@media (min-width: 481px) {
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: fantasy;
+  }
+  body{
+    background-attachment: fixed;
+    background-image: url(img/hanabi2-min.jpg);
+    background-color: rgba(255, 255, 255, 0.2);
+    background-blend-mode: lighten;
+    background-size: cover;
+  }
+
+  header{
+    width: 100%;
+    height: 13%;
+    margin: auto;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    background-color: white;
+    position: fixed;
+    z-index: 20;
+  }
+  header h1{
+    margin-left: 10px;
+  }
+  .overlay{
+    display: none;
+  }
+  .sp-menu{
+    display: none;
+  }
+  .pc-menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    /* border-bottom: 3px solid #000; */
+  }
+  .pc-menu li{
+    margin: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .pc-menu li a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+  }
+  .pc-menu li a:hover{
+    border-bottom: 2px solid black;
+  }
+
+  .wtanaka{
+    width: 100%;
+    height: 100vh;
+  }
+  .sp-intro{
+    display: none;
+  }
+  .since{
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    font-size: 100px;
+    z-index: 2;
+  }
+  .since span{
+    opacity: 0;
+    transition: all 1s ease;
+    transform: translateY(50px);
+    display: inline-block;
+  }
+  .since span.fade{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  .since2{
+    position: absolute;
+    right: 30%;
+    bottom: 32%;
+    font-size: 100px;
+    z-index: 2;
+  }
+  .wtanaka img{
+    width: 200px;
+    height: 160px;
+    object-fit: cover;
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 16px;
+    opacity: .8;
+    z-index: 1;
+    animation: popup 3s;
+  }
+  @keyframes popup{
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    20% {
+      opacity: .1;
+    }
+    50% {
+      opacity: .5;
+    }
+    95% {
+      opacity: .7;
+    }
+    100% {
+      opacity: .8;
+    }
+  }
+  .wtanaka img:hover{
+    opacity: 1;
+    transform: scale(1.2);
+    z-index: 2;
+  }
+  .sea{
+    bottom: 35%;
+    left: 16%;
+    transform: rotate(-20deg);
+  }
+  .aniges{
+    bottom: 30%;
+    left: 25%;
+    transform: rotate(-40deg);
+    z-index: 1;
+  }
+  .border{
+    border-bottom: 6px solid rgba(0, 0, 0, 0.8);
+    width: 50%;
+    position: absolute;
+    right: 20%;
+    bottom: 30%;
+  }
+
+   .natsuki{
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    background-image: url(img/natsuki1-min.jpg);
+    background-color: rgba(255, 255, 255, 0.3);
+    background-blend-mode: lighten;
+    background-size: cover;
+    border-radius: 16px;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-bottom: 100px;
+    animation: popup 2s ease-in-out;
+  }
+  @keyframes popup{
+    0% {
+      transform: translateX(80px);
+      opacity: 0;
+    }
+    25% {
+      opacity: .25;
+    }
+    50% {
+      opacity: .5;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .natsuki img{
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border: 4px solid black;
+    border-radius: 16px;
+  }
+  .natsuki p{
+    font-size: 50px;
+    font-weight: bolder;
+    margin: 30px auto;
+  }
+
+  .shunpei{
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    background-image: url(img/shunpei1-min.jpg);
+    background-color: rgba(255, 255, 255, 0.3);
+    background-blend-mode: lighten;
+    background-size: cover;
+    border-radius: 16px;
+    align-items: center;
+    margin-bottom: 100px;
+    animation: popup2 2s ease-in-out;
+  }
+  @keyframes popup2{
+    0% {
+      transform: translateX(-80px);
+      opacity: 0;
+    }
+    25% {
+      opacity: .25;
+    }
+    50% {
+      opacity: .5;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .shunpei img{
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border: 4px solid black;
+    background-size: cover;
+    border-radius: 16px;
+  }
+  .shunpei p{
+    font-size: 50px;
+    font-weight: bolder;
+    margin: 30px auto;
+  }
+
+  .picture{
+    width: 700px;
+    margin: 30px auto;
+    overflow: hidden;
+  }
+  .picture h1{
+    text-align: center;
+    font-size: 80px;
+  }
+  .slide-image{
+    display: flex;
+    width: 700px;
+    height: 500px;
+  }
+  .slide-images{
+    display: flex;
+    width: 700px;
+    height: 500px;
+  }
+  .slide-image img{
+    width: 700px;
+    object-fit: contain;
+  }
+  .slide-images img{
+    width: 700px;
+    object-fit: contain;
+  }
+  #prevBtn{
+    font-size: 50px;
+    cursor: pointer;
+    text-align: left;
+    user-select: none;
+  }
+  #prevBtns{
+    font-size: 50px;
+    cursor: pointer;
+    text-align: left;
+    user-select: none;
+  }
+  #nextBtn{
+    font-size: 50px;
+    cursor: pointer;
+    float: right;
+    user-select: none;
+  }
+  #nextBtns{
+    font-size: 50px;
+    cursor: pointer;
+    float: right;
+    user-select: none;
+  }
+
+  footer{
+    height: 30%;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    color: black;
+  }
+  footer p{
+    margin-left: 3%;
+  }
+
+}
