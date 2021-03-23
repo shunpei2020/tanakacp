@@ -1,34 +1,5 @@
 'use strict'
 {
-// PhotoSlider
-  const slide = document.querySelector('.slide-image');
-  const slideImages = document.querySelector('.slide-image img');
-  
-  // Buttons
-  const prevBtn = document.querySelector('#prevBtn');
-  const nextBtn = document.querySelector('#nextBtn');
-  
-  // Counter
-  let counter = 1;
-  const size = slideImages.clientWidth;
-  
-  slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-  
-  // Button Listener
-  nextBtn.addEventListener('click', () => {
-    if(counter > 18) return;
-    slide.style.transition = "transform .5s ease-in-out";
-    counter++;
-    slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-  });
-  
-  prevBtn.addEventListener('click', () => {
-    if(counter <= 0) return;
-    slide.style.transition = "transform .5s ease-in-out";
-    counter--;
-    slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-  });
-
 // textanimation
   const text = document.querySelector('.since2');
   const strText = text.textContent;
@@ -86,5 +57,10 @@
   }
   window.addEventListener('scroll',scrollAppear);
 
+  // TOP スライダー
+  $('.autoplay').slick({
+    autoplay: true,
+    autoplaySpeed: 1000,
+  });
 }
 

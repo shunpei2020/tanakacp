@@ -5,8 +5,21 @@
     padding: 0;
     font-family: fantasy;
   }
-body::before{
-  content: '';
+
+  .autoplay{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border: 4px solid #000;
+    margin: 0 auto;
+  }
+  .autoplay img{
+    margin: 0 auto;
+    width: 100%;
+    object-fit: contain;
+  }
+  body::before{
+    content: '';
     background-image: url(img/aniges.jpg);
     background-color: rgba(255, 255, 255, 0.4);
     background-blend-mode: lighten;
@@ -291,6 +304,18 @@ body::before{
     background-color: rgba(255, 255, 255, 0.2);
     background-blend-mode: lighten;
     background-size: cover;
+  }
+  .autoplay{
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border: 4px solid #000;
+    margin: 0 auto;
+  }
+  .autoplay img{
+    margin: 0 auto;
+    width: 100%;
+    object-fit: contain;
   }
 
   header{
