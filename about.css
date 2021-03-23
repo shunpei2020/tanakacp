@@ -5,92 +5,93 @@
     padding: 0;
     font-family: fantasy;
   }
-
-  body{
-    background-attachment: fixed;
+  body::before{
+    content: '';
     background-image: url(img/sea2020-min.jpg);
     background-color: rgba(255, 255, 255, 0.5);
     background-blend-mode: lighten;
-    background-position: center;
-    background-size: contain;
-    /* background-repeat: no-repeat; */
-  } 
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    }
 
   header{
     width: 100%;
     height: 60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: white;
     position: fixed;
     z-index: 20;
   }
-  .pc-menu{
-    display: none;
-  }
-  .sp-menu{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  .sp-menu h1{
-    color: black;
+  header h1{
     font-size: 20px;
-    margin-left: 20px;
-    line-height: 60px;
+    margin-top: 15px;
   }
-  .sp-menu #open {
-    font-size: 30px;
-    margin: 10px;
-    cursor: pointer;
+  .nav-links a{
     color: black;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
   }
-  .spmenu #open.hide {
-    display: none;
-  }
-  .overlay {
-    width: 50%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: white;
-    text-align: center;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 1s;
-    z-index: 21;
-  }
-  .overlay.show {
-    opacity: .8;
-    pointer-events: auto;
-  }
-  .overlay #close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 30px;
-    cursor: pointer;
-    color: black;
-  }
-  .overlay ul {
+  .nav-links li{
     list-style: none;
-    margin: 20px;
-    margin-right: 50px;
+    margin-right: 10px;
   }
-  .overlay li {
-    margin: 10px;
+  .nav-links{
+    position: absolute;
+    right: 0;
+    height: 90vh;
+    top: 10vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    border-radius: 15%;
+  }
+  .nav-active{
+    transform: translateX(20%);
+  }
+  .nav-active li{
+    margin-top: 50px;
+  }
+  .toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+  }
+  .toggle .line2{
     opacity: 0;
-    transform: translate(16px);
-    transition:  opacity .3s transform .3s;
   }
-  .overlay li a{
-    color: black;
+  .toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
   }
-  .overlay.show li {
-    opacity: 1;
-    transform: none;
+  .burger{
+    margin-top: 15px;
   }
-
+  .burger div{
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: black;
+    transition: all 0.3s ease;
+  }
+  @keyframes navLinkFade{
+    from{
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
   .wtanaka img{
     display: none;
   }
@@ -308,33 +309,33 @@
   header h1{
     margin-left: 10px;
   }
-  .overlay{
-    display: none;
-  }
-  .sp-menu{
-    display: none;
-  }
-  .pc-menu{
+
+  header{
     width: 100%;
+    height: 13%;
+    margin: auto;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    background-color: #fff;
+    position: fixed;
+    z-index: 20;
+  }
+  header h1{
+    display: none;
+  }
+  header ul {
     display: flex;
     justify-content: space-around;
+    width: 80%;
+    margin: 30px auto;
     list-style: none;
-    /* border-bottom: 3px solid #000; */
   }
-  .pc-menu li{
-    margin: 20px;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  .pc-menu li a{
+  header ul li a{
     text-decoration: none;
-    color: black;
-    padding: 10px;
+    color: #000;
+    font-size: 20px;
   }
-  .pc-menu li a:hover{
-    border-bottom: 2px solid black;
-  }
-
   .wtanaka{
     width: 100%;
     height: 100vh;
@@ -512,59 +513,6 @@
     font-weight: bolder;
     margin: 30px auto;
   }
-
-  .picture{
-    width: 700px;
-    margin: 30px auto;
-    overflow: hidden;
-  }
-  .picture h1{
-    text-align: center;
-    font-size: 80px;
-  }
-  .slide-image{
-    display: flex;
-    width: 700px;
-    height: 500px;
-  }
-  .slide-images{
-    display: flex;
-    width: 700px;
-    height: 500px;
-  }
-  .slide-image img{
-    width: 700px;
-    object-fit: contain;
-  }
-  .slide-images img{
-    width: 700px;
-    object-fit: contain;
-  }
-  #prevBtn{
-    font-size: 50px;
-    cursor: pointer;
-    text-align: left;
-    user-select: none;
-  }
-  #prevBtns{
-    font-size: 50px;
-    cursor: pointer;
-    text-align: left;
-    user-select: none;
-  }
-  #nextBtn{
-    font-size: 50px;
-    cursor: pointer;
-    float: right;
-    user-select: none;
-  }
-  #nextBtns{
-    font-size: 50px;
-    cursor: pointer;
-    float: right;
-    user-select: none;
-  }
-
   footer{
     height: 30%;
     width: 100%;

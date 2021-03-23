@@ -10,33 +10,19 @@
 </head>
 <body>
   <header>
-    <div class="sp-menu">
-      <h1>tanaKouple</h1>
-      <span class="material-icons" id="open">
-        menu
-      </span>
-    </div>
-    <ul class="pc-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="">about</a></li>
-      <li><a href="index.html#movie">movies</a></li>
-      <li><a href="index.html#photo">photos</a></li>
+    <h1>tanaKouple</h1>
+    <ul class="nav-links">
+      <li><a href="index.html#home" id="smooth">Home</a></li>
+      <li><a href="index.html#about" id="smooth">About</a></li>
+      <li><a href="index.html#movie" id="smooth">Works</a></li>
+      <li><a href="index.html#photo" id="smooth">Skills</a></li>
     </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
   </header>
-
-  <div class="overlay">
-    <span class="material-icons" id="close">
-      close
-    </span>
-    <nav>
-      <ul>
-        <li><a href="index.html#home" id="smooth">Home</a></li>
-        <li><a href="index.html#about" id="smooth">About</a></li>
-        <li><a href="index.html#movie" id="smooth">Movies</a></li>
-        <li><a href="index.html#photo" id="smooth">Photos</a></li>
-      </ul>
-    </nav>
-  </div>
 
   <section class="wtanaka">
     <p class="sp-intro">Kochi</p>
@@ -74,5 +60,7 @@
   </footer>
 
   <script src="app2.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="burger.js"></script>
 </body>
 </html>

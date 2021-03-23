@@ -5,90 +5,94 @@
     padding: 0;
     font-family: fantasy;
   }
-body{
-    background-attachment: fixed;
+body::before{
+  content: '';
     background-image: url(img/aniges.jpg);
     background-color: rgba(255, 255, 255, 0.4);
     background-blend-mode: lighten;
-    background-size: contain;
-    background-repeat: no-repeat;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
   }
 
   header{
     width: 100%;
     height: 60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: black;
     position: fixed;
     z-index: 20;
   }
-  .pc-menu{
-    display: none;
-  }
-  .sp-menu{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  .sp-menu h1{
-    color: white;
+  header h1{
+    color: #fff;
     font-size: 20px;
-    margin-left: 20px;
-    line-height: 60px;
+    margin-top: 15px;
   }
-  .sp-menu #open {
-    font-size: 30px;
-    margin: 10px;
-    cursor: pointer;
-    color: white;
+  .nav-links a{
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
   }
-  .spmenu #open.hide {
-    display: none;
-  }
-  .overlay {
-    width: 50%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: black;
-    text-align: center;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 1s;
-    z-index: 21;
-  }
-  .overlay.show {
-    opacity: .8;
-    pointer-events: auto;
-  }
-  .overlay #close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-  }
-  .overlay ul {
+  .nav-links li{
     list-style: none;
-    margin: 20px;
-    margin-right: 50px;
+    margin-right: 10px;
   }
-  .overlay li {
-    margin: 10px;
+  .nav-links{
+    position: absolute;
+    right: 0;
+    height: 90vh;
+    top: 10vh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    border-radius: 15%;
+  }
+  .nav-active{
+    transform: translateX(20%);
+  }
+  .nav-active li{
+    margin-top: 50px;
+  }
+  .toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+  }
+  .toggle .line2{
     opacity: 0;
-    transform: translate(16px);
-    transition:  opacity .3s transform .3s;
   }
-  .overlay li a{
-    color: white;
+  .toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
   }
-  .overlay.show li {
-    opacity: 1;
-    transform: none;
+  .burger{
+    margin-top: 15px;
   }
-
+  .burger div{
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  @keyframes navLinkFade{
+    from{
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
   .home{
     width: 100%;
     height: 100px;
@@ -300,32 +304,20 @@ body{
     position: fixed;
     z-index: 20;
   }
-  .sp-menu{
+  header h1{
     display: none;
   }
-  .overlay{
-    display: none;
-  }
-  .pc-menu{
-    width: 100%;
+  header ul {
     display: flex;
     justify-content: space-around;
+    width: 80%;
+    margin: 30px auto;
     list-style: none;
   }
-  .pc-menu li{
-    margin: 20px;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  .pc-menu li a{
+  header ul li a{
     text-decoration: none;
-    color: black;
-    padding: 10px;
-    color: white;
-  }
-  .pc-menu li a:hover{
-    border-bottom: 2px solid white;
-    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
   }
 
   .home{
